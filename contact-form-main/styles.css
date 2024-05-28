@@ -1,0 +1,196 @@
+/* styles.css */
+
+/* TEXTS */
+/* Define the font */
+@font-face {
+  font-family: 'FontKarlaNormal';
+  src: url('./fonts/static/Karla-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+/* Apply font to all elements */
+body {
+  font-family: 'FontKarlaNormal', sans-serif;
+  letter-spacing: -0.2px;
+}
+.form-title {
+  font-size: 150%;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.form-field-name{
+  font-weight: 100;
+  font-stretch: condensed;
+  font-family: 'FontKarlaNormal', sans-serif;
+}
+.textInput {
+  border: 1px solid #929C99; /* Default border color */
+  padding: 5px; /* Add padding for better appearance */
+  transition: border-color 0.3s; /* Add transition effect for smoother change */
+
+}
+.textInput:focus {
+  border-color: #0C7D69; /* New border color when input is focused */
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  display: none;
+}
+input:invalid + label + button + .error-message {
+  display: block;
+}
+
+/* Hide the success message by default */
+.success-message {
+  display: none;
+  background-color: #7FFF00; /* Green color for success message */
+  color: #000; /* Black text color */
+  padding: 10px; /* Add padding */
+  text-align: center; /* Center align text */
+  margin-bottom: 10px; /* Add spacing below the success message */
+}
+
+/* Show the success message when the form is valid and submitted */
+form:valid + .success-message {
+  display: block;
+}
+
+/* Apply border-like styling to the label */
+.radioButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+  height: 35px;
+  border: 1px solid #929C99; /* Create a border-like appearance */
+  border-radius: 5px; /* Round the corners */
+}
+.radioButton:input[type="radio"]:checked {
+  display: flex;
+  background-color: #E0F1E7;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+  height: 35px;
+  border: 1px solid #0C7D69; /* Create a border-like appearance */
+  border-radius: 5px; /* Round the corners */
+}
+
+input[type="radio"]:checked + label {
+  background-color: #E0F1E7;
+  color: #0C7D69; /* Change the text color when radio button is checked */
+}
+
+.submitCheckbox {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* COLUMNS AND ROWS */
+/* Create two equal columns that floats next to each other */
+.columnLeft {
+  /* float: left; */
+  width: 50%;
+  margin-right: 5px;
+}
+.columnRight {
+  /* float: left; */
+  width: 50%;
+  margin-left: 5px;
+}
+.row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/* BACKGROUND */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+.container {
+  background-color: #E0F1E7;
+  display: grid;
+  place-items: center;
+}
+/* FORM ELEMENTS */
+.container-form {
+  align-self: center;
+  background-color: white;
+  width: 70%;
+  padding: 20px;
+  border-radius: 2%;
+}
+.background {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #E0F1E7;
+}
+button {
+  display: grid;
+  background-color: #0C7D69;
+  border: none;
+  border-radius: 5%;
+  place-items: center;
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  color: white;
+} 
+
+/* CHECKBOX */
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px; 
+  background-color: white;
+} 
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #0C7D69;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* FORM STYLES */
+input[type="text"] {
+  width: 100%;
+  border-radius: 5px; /* Adjust the value to make the border more round */
+  border-color: #929C9B; /* Change the border color to red */
+  border-width: 0.5px; /* Change the border thickness */
+  border-style: solid; /* Set the border style to solid */
+  height: 35px;
+}
+
+input:focus {
+  outline: none !important;
+  border:1px solid #0C7D69;
+}
+
+label {
+  color: #929C99; /* Change text color */
+  font-size: 10px; /* Change font size */
+  text-align: center; /* Center text horizontally */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
